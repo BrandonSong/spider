@@ -9,4 +9,8 @@ html_str = parse_url(url)
 
 data = json.loads(html_str)
 
-pprint(data)
+# pprint(data)
+
+# json.dumps把python类型转换为json字符串
+with open("douban.json", "w", encoding="utf-8") as f:
+    f.write(json.dumps(data, ensure_ascii=False, indent=2))
