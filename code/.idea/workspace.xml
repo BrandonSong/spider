@@ -16,6 +16,7 @@
     <SUITE FILE_PATH="coverage/code$36kr.coverage" NAME="36kr Coverage Results" MODIFIED="1542527740832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day02" />
     <SUITE FILE_PATH="coverage/code$04_fanyi.coverage" NAME="04_fanyi Coverage Results" MODIFIED="1542085074848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/code$01_save_pic.coverage" NAME="01_save_pic Coverage Results" MODIFIED="1542102892898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/code$01_bilibili_spider.coverage" NAME="01_bilibili_spider Coverage Results" MODIFIED="1542557577562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day06" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -23,10 +24,31 @@
       <file leaf-file-name="01_bilibili_spider.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/day06/01_bilibili_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="473">
+              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="e#43#58#0" expanded="true" />
+                <element signature="e#157#404#0" expanded="true" />
+                <element signature="e#444#554#0" expanded="true" />
+                <element signature="e#602#680#0" expanded="true" />
+                <element signature="e#733#994#0" expanded="true" />
+                <element signature="e#1023#1435#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="02_qiuba.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day05/02_qiuba.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+              <folding>
+                <element signature="e#43#58#0" expanded="true" />
+                <element signature="e#506#618#0" expanded="true" />
+                <element signature="e#2360#2373#0" expanded="true" />
+                <element signature="e#2402#2721#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,6 +140,34 @@
               <option name="myItemId" value="code" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="day06" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="day05" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -148,26 +198,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.02_qiuba">
-    <configuration default="false" name="05_try_proxies" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="code" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05_try_proxies.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.01_bilibili_spider">
     <configuration default="false" name="01_save_pic" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -239,6 +270,25 @@
       <module name="code" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day05/02_qiuba.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="01_bilibili_spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day06" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day06/01_bilibili_spider.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -404,19 +454,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.05_try_proxies" />
-      <item index="1" class="java.lang.String" itemvalue="Python.01_save_pic" />
-      <item index="2" class="java.lang.String" itemvalue="Python.douban" />
-      <item index="3" class="java.lang.String" itemvalue="Python.36kr" />
-      <item index="4" class="java.lang.String" itemvalue="Python.02_qiuba" />
+      <item index="0" class="java.lang.String" itemvalue="Python.01_save_pic" />
+      <item index="1" class="java.lang.String" itemvalue="Python.douban" />
+      <item index="2" class="java.lang.String" itemvalue="Python.36kr" />
+      <item index="3" class="java.lang.String" itemvalue="Python.02_qiuba" />
+      <item index="4" class="java.lang.String" itemvalue="Python.01_bilibili_spider" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.02_qiuba" />
-        <item index="1" class="java.lang.String" itemvalue="Python.36kr" />
-        <item index="2" class="java.lang.String" itemvalue="Python.douban" />
-        <item index="3" class="java.lang.String" itemvalue="Python.01_save_pic" />
-        <item index="4" class="java.lang.String" itemvalue="Python.05_try_proxies" />
+        <item index="0" class="java.lang.String" itemvalue="Python.01_bilibili_spider" />
+        <item index="1" class="java.lang.String" itemvalue="Python.02_qiuba" />
+        <item index="2" class="java.lang.String" itemvalue="Python.36kr" />
+        <item index="3" class="java.lang.String" itemvalue="Python.douban" />
+        <item index="4" class="java.lang.String" itemvalue="Python.01_save_pic" />
       </list>
     </recent_temporary>
   </component>
@@ -437,7 +487,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1936" height="1096" extended-state="0" />
+    <frame x="1358" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16826923" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -516,19 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day05/01_tieba_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#104#108#0" expanded="false" />
-            <element signature="e#137#419#0" expanded="false" />
-            <element signature="e#158#171#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/-1215997936/lxml/etree/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -556,14 +593,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/day05/01_tieba_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/day05/02_qiuba.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="130">
+          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
             <element signature="e#43#58#0" expanded="true" />
             <element signature="e#506#618#0" expanded="true" />
-            <element signature="e#670#2313#0" expanded="true" />
             <element signature="e#2360#2373#0" expanded="true" />
             <element signature="e#2402#2721#0" expanded="true" />
           </folding>
@@ -572,10 +616,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/day06/01_bilibili_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="473">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="e#43#58#0" expanded="true" />
+            <element signature="e#157#404#0" expanded="true" />
+            <element signature="e#444#554#0" expanded="true" />
+            <element signature="e#602#680#0" expanded="true" />
+            <element signature="e#733#994#0" expanded="true" />
+            <element signature="e#1023#1435#0" expanded="true" />
           </folding>
         </state>
       </provider>
