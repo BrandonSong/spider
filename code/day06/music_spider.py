@@ -15,7 +15,7 @@ class WyMusicSpider:
 
     def parse_url(self, url):
         print(url)
-        content = requests.get(url, headers=self.headers).content
+        content = requests.get(url, headers=self.headers, verify=False).content
         return content
 
     def get_cat(self, content):
@@ -43,10 +43,14 @@ class WyMusicSpider:
         next_page_url = html_str.xpath("//a[@class='zbtn znxt']/@href")[0] if len(html_str.xpath("//a[@class='zbtn znxt']/@href")) > 0 else None
         return sheet_url_list, next_page_url
 
-    def parse_detail(self, sheet_detail_content):
+    def parse_detail(self, sheet_detail_content, item):
         html_str = etree.HTML(sheet_detail_content)
-        song_name_list = html_str.xpath("//ul[@class='f-hide']/li/a/text()")
-        return song_name_list
+        item["sheet_name"] = html_str.xpath("//h2[@class='f-ff2 f-brk']/text()")[0]
+        item["sheet_author"] = html_str.xpath("//div[@class='user f-cb']/span[@class='name']/a/text()")[0]
+        # 获取时间
+        create_date = html_str.xpath("//div[@class='user f-cb']/span[@class='time s-fc4']/text()")[0].encode().decode()
+        item["create_date"] = create_date.repalce(" 创建", "")
+        return item
 
     def run(self):
         # 1.通过start_url获取歌单页面
@@ -58,6 +62,12 @@ class WyMusicSpider:
         for top_category, second_category_list in category.items():
             for second_category in second_category_list:
                 next_page_url = ""
+
+                # 歌单信息
+                item = dict()
+                item["top_category"] = top_category
+                item["second_category"] = second_category
+
                 # 如果有下一页,就继续获取下一页
                 while next_page_url is not None:
                     sheet_content = self.parse_url(self.sheet_part_url.format(second_category))
@@ -65,7 +75,7 @@ class WyMusicSpider:
                     for sheet_url in sheet_url_list:
                         sheet_detail_content = self.parse_url(self.detail_part_url + sheet_url)
                     # # 3.2 获取每个歌单明细
-                        song_name_list = self.parse_detail(sheet_detail_content)
+                        song_name_list = self.parse_detail(sheet_detail_content, item)
                     # # 3.3 保存数据
                         print(song_name_list)
 
