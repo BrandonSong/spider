@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [INFO  - 2018-11-21T14:17:47.442Z] GhostDriver - Main - running on port 62198
 [INFO  - 2018-11-21T14:17:50.579Z] Session [3a6b42c0-ed98-11e8-803e-512be1f47458] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
 [INFO  - 2018-11-21T14:17:50.579Z] Session [3a6b42c0-ed98-11e8-803e-512be1f47458] - page.customHeaders:  - {}
@@ -6,3 +7,10 @@
 [ERROR - 2018-11-21T14:18:34.295Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1542809914253
 
   phantomjs://platform/console++.js:263 in error
+=======
+[INFO  - 2018-11-26T03:24:05.256Z] GhostDriver - Main - running on port 52577
+[INFO  - 2018-11-26T03:24:07.351Z] Session [bb9ed830-f12a-11e8-816a-557f22e722a0] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2018-11-26T03:24:07.351Z] Session [bb9ed830-f12a-11e8-816a-557f22e722a0] - page.customHeaders:  - {}
+[INFO  - 2018-11-26T03:24:07.351Z] Session [bb9ed830-f12a-11e8-816a-557f22e722a0] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2018-11-26T03:24:07.351Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: bb9ed830-f12a-11e8-816a-557f22e722a0
+>>>>>>> 11aad4ff309b4be9d324895c51401dc959ccf32a

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for myspider project
+# Scrapy settings for suning project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,15 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'myspider'
+BOT_NAME = 'suning'
 
-SPIDER_MODULES = ['myspider.spiders']
-NEWSPIDER_MODULE = 'myspider.spiders'
+SPIDER_MODULES = ['suning.spiders']
+NEWSPIDER_MODULE = 'suning.spiders'
 
+LOG_LEVEL = "WARNING"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'myspider (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +48,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'myspider.middlewares.MyspiderSpiderMiddleware': 543,
+#    'suning.middlewares.SuningSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'myspider.middlewares.MyspiderDownloaderMiddleware': 543,
+#    'suning.middlewares.SuningDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,17 +65,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-<<<<<<< HEAD
-#ITEM_PIPELINES = {
-#    'myspider.pipelines.MyspiderPipeline': 300,
-#}
-=======
 ITEM_PIPELINES = {
-   'myspider.pipelines.MyspiderPipeline': 300,
-   'scrapy.pipelines.images.ImagePipeline': 1,  # Media Pipeline中的图片管道
-   'scrapy.pipelines.files.FilesPipeline': 1,  # Media Pipeline中的文件管道
+   'suning.pipelines.SuningPipeline': 300,
 }
->>>>>>> 11aad4ff309b4be9d324895c51401dc959ccf32a
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

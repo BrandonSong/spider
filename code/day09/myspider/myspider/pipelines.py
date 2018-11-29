@@ -8,6 +8,7 @@
 
 class MyspiderPipeline(object):
     def process_item(self, item, spider):
+<<<<<<< HEAD
         if spider.name == "itcast":
             # 判断对应的爬虫 来做对应的处理
             pass
@@ -17,3 +18,6 @@ class MyspiderPipeline(object):
 class MyspiderPipeline2(object):
     def process_item(self, item, spider):
         return item
+=======
+        return item
+>>>>>>> 11aad4ff309b4be9d324895c51401dc959ccf32a
