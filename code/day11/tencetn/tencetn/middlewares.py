@@ -4,11 +4,11 @@
 #
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-import random
+
 from scrapy import signals
 
 
-class CircSpiderMiddleware(object):
+class TencetnSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -56,7 +56,7 @@ class CircSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class CircDownloaderMiddleware(object):
+class TencetnDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
@@ -101,19 +101,3 @@ class CircDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
-
-
-class RandomUserAgentMiddleware(object):
-    """随机给爬虫添加User-Agent"""
-    def process_request(self, request, spider):
-        """发送请求前 调用此方法"""
-        ua = random.choice(spider.settings.get("User-Agent"))
-        request.headers["User-Agent"] = ua
-
-
-class CheckUserAgentMiddleware(object):
-    """检查user-agent是否生效"""
-    def process_response(self, request, response, spider):
-        print(dir(response))
-        print(request.headers["User-Agent"])
-        return response
