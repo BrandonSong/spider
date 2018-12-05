@@ -9,26 +9,54 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
+import datetime
+
 BOT_NAME = 'jdbook'
 
 SPIDER_MODULES = ['jdbook.spiders']
 NEWSPIDER_MODULE = 'jdbook.spiders'
 
 
-# LOG_LEVEL = "WARNING"
+# LOG_ENCODING 默认使用 'utf-8'
+# LOG-ENABLED 默认True 启用logging
+
+# 设置log等级
+LOG_LEVEL = "WARNING"
+# 设置LOG的保存位置
+to_day = datetime.datetime.now()
+LOG_FILE = "log/scrapy_{}_{}_{}.log".format(to_day.year, to_day.month, to_day.day)
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'
 
 # 此处添加分布式爬虫的配置项
+# 配置此项 可以使用scrapy-redis的去重类替换scrapy的去重类
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+# 配置此项 使用scrapy-redis的调度器的类替换scrapy的调度器的类
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+
+# 配置持久化
 SCHEDULER_PERSIST = True
 
+# 配置数据管道
+# 默认开启redis的管道
+# 也可以自定义数据管道，在此处开启即可
 ITEM_PIPELINES = {
     # 'example.pipelines.ExamplePipeline': 300,
+    # scrapy-redis自带的数据管道类  将抓取的数据存储至redis数据库中
     'scrapy_redis.pipelines.RedisPipeline': 400,
 }
+
+# Configure redis
+# First method like this
+# REDIS_URL = "redis://host:port"
+
+# Second method like this
+# REDIS_HOST =  '127.0.0.1'
+# REDIS_PORT =  6379
+# if your redis must use password to authenticity, you can configure the REDIS_PASSWORD
+# REDIS_PASSWORD =  'your password'
+
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
