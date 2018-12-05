@@ -4,7 +4,7 @@ from pymongo import MongoClient
 
 client = MongoClient()
 
-collection = client["test"]["t252"]
+collection = client["read_source"]["t252"]
 
 # 插入一千条数据
 # data_list = [{"_id": i, "name": "py{}".format(i)} for i in range(1000)]
