@@ -66,4 +66,5 @@ class JdSpider(scrapy.Spider):
         item = response.meta["item"]
         item["book_price"] = json.loads(response.body.decode())[0].get("op")
         print(item)
+        yield item
 

@@ -27,8 +27,11 @@ SCHEDULER_PERSIST = True
 
 ITEM_PIPELINES = {
     # 'example.pipelines.ExamplePipeline': 300,
-    'scrapy_redis.pipelines.RedisPipeline': 400,
+    'scrapy_redis.pipelines.RedisPipeline': 400, # 将数据保存到redis数据库中
 }
+
+# redis的配置
+REDIS_URL = "redis://127.0.0.1:6379"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
