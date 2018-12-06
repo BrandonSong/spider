@@ -11,19 +11,19 @@
 
 import datetime
 
-BOT_NAME = 'jdbook'
+BOT_NAME = 'book'
 
-SPIDER_MODULES = ['jdbook.spiders']
-NEWSPIDER_MODULE = 'jdbook.spiders'
+SPIDER_MODULES = ['book.spiders']
+NEWSPIDER_MODULE = 'book.spiders'
 
 
 # LOG_ENCODING 默认使用 'utf-8'
 # LOG-ENABLED 默认True 启用logging
 
 # 设置log等级
-LOG_LEVEL = "WARNING"
+# LOG_LEVEL = "WARNING"
 # 设置LOG的保存位置
-to_day = datetime.datetime.now()
+# to_day = datetime.datetime.now()
 # LOG_FILE = "log/scrapy_{}_{}_{}.log".format(to_day.year, to_day.month, to_day.day)
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -41,22 +41,21 @@ SCHEDULER_PERSIST = True
 # 配置数据管道
 # 默认开启redis的管道
 # 也可以自定义数据管道，在此处开启即可
-ITEM_PIPELINES = {
+# ITEM_PIPELINES = {
     # 'example.pipelines.ExamplePipeline': 300,
     # scrapy-redis自带的数据管道类  将抓取的数据存储至redis数据库中
-    'scrapy_redis.pipelines.RedisPipeline': 400,
-}
+    # 'scrapy_redis.pipelines.RedisPipeline': 400,
+# }
 
 # Configure redis
 # First method like this
-# REDIS_URL = "redis://host:port"
+REDIS_URL = "redis://127.0.0.1:6379"
 
 # Second method like this
 # REDIS_HOST =  '127.0.0.1'
 # REDIS_PORT =  6379
 # if your redis must use password to authenticity, you can configure the REDIS_PASSWORD
 # REDIS_PASSWORD =  'your password'
-
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
