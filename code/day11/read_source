@@ -2,6 +2,56 @@
 ### 代码位置 scrapy-redis>src>scrapy-redis
 
 # scrapy-redis 源码目录结构 
-### 1.pipelines.py
-    
 
+### 1.defaults.py
+##### 此模块提供一些默认的分布式爬虫在redis中的配置 比如REDIS_ENCODING,DUPEFILTER_KEY等
+```python
+import redis
+
+
+# For standalone use.
+DUPEFILTER_KEY = 'dupefilter:%(timestamp)s'
+
+PIPELINE_KEY = '%(spider)s:items'
+
+REDIS_CLS = redis.StrictRedis
+REDIS_ENCODING = 'utf-8'
+# Sane connection defaults.
+REDIS_PARAMS = {
+    'socket_timeout': 30,
+    'socket_connect_timeout': 30,
+    'retry_on_timeout': True,
+    'encoding': REDIS_ENCODING,
+}
+
+SCHEDULER_QUEUE_KEY = '%(spider)s:requests'
+SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.PriorityQueue'
+SCHEDULER_DUPEFILTER_KEY = '%(spider)s:dupefilter'
+SCHEDULER_DUPEFILTER_CLASS = 'scrapy_redis.dupefilter.RFPDupeFilter'
+
+START_URLS_KEY = '%(name)s:start_urls'
+START_URLS_AS_SET = False
+
+```
+
+
+### 2.connection.py
+###### 此模块是建立和redis数据库的链接模块 包含两个方法 
+源码如下
+```python
+from . import defaults
+def get_redis_from_settings(settings):
+    params = defaults.REDIS_PARAMS.copy()
+    params.update(settings.getdict('REDIS_PARAMS'))
+    for source, dest in SETTINGS_PARAMS_MAP.items():
+        val = settings.get(source)
+        if val:
+            params[dest] = val
+
+    if isinstance(params.get('redis_cls'), six.string_types):
+        params['redis_cls'] = load_object(params['redis_cls'])
+
+    return get_redis(**params)
+```
+###### 此方法会使用scrapy settings对象来返回一个redis客户端实例 
+从defaults.py 模块中导入一些默认配置
