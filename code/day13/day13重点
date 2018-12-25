@@ -1,0 +1,54 @@
+#url详解
+## 格式：scheme://host:port/path/?query-string=XXX#anchor
+* scheme: 代表访问协议 一般为http(访问端口80)或https(服务器端口443)以及ftp等
+* host: 主机名,域名，例如www.baidu.com
+* port: 端口号 访问网站时 浏览器默认使用的端口80
+* path: 查找路径 例如 www.jianshu.com/trending/now 后面的trending/now就是path
+* query-string: 查询字符串 
+* anchor: 锚点 前端用来做页面定位的
+
+
+# urllib库 
+**在python3中 urllib库中，所有和网络请求相关的方法，都集成到urllib.request模块**
+## **urlopen函数(默认为get请求)**
+    应用场景: 发送一个request请求 
+    ### params 
+        1.url: 请求的url地址
+        2.data: post请求时携带的请求体数据, 如果设置了这个值，就会变成post请求
+    ### return
+        1.返回一个http.client.HTTPResonse对象，是一个类文件句柄对象
+        2.该方法包含read(size), readline(), readlines()以及getcode()等方法
+
+## **urlretrieve函数**
+    应用场景: 可以方便的将网页上的一个文件保存到本地,实例代码
+    ```python
+       from urllib import request
+       request.urlretrieve("http://www.baidu.com", 'baidu.html')
+    ```
+    ### params
+        1.url: 请求的url地址
+        2.file_path: 下载的文件保存到指定位置的指定文件中
+        
+## **urlencode函数**
+    对url进行编码
+    
+## **parse_qs函数** 
+    对url进行解码
+
+# **urlparse函数**
+# **urlsplit函数**
+    
+    
+# request.Request类
+    可以在这里添加headers 来构造一个请求
+    代码示例
+    ```
+        req = request.Request(url, headers = headers)
+        rep = request.urlopen(req)
+    ```
+
+# ProxyHandle类
+    应用场景: 添加IP代理来反反爬
+## **注意: httpbin.org/ip可以查看访问的ip和验证代理ip是否正常**      
+
+
