@@ -49,7 +49,7 @@ SCHEDULER_PERSIST = True
 
 # Configure redis
 # First method like this
-REDIS_URL = "redis://127.0.0.1:6379"
+REDIS_URL = "redis://192.168.56.101:6379"
 
 # Second method like this
 # REDIS_HOST =  '127.0.0.1'
