@@ -15,7 +15,7 @@ class MtmsItem(scrapy.Item):
     category = scrapy.Field()
     address = scrapy.Field()
     phone = scrapy.Field()
-    consumption = scrapy.Field()
+    avgPrice = scrapy.Field()
     shop_hours = scrapy.Field()
     score = scrapy.Field()
     score_num = scrapy.Field()
