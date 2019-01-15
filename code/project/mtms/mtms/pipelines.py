@@ -6,24 +6,28 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 from scrapy import Item
 import pymongo
+from scrapy.conf import settings
+
 
 
 class MtmsPipeline(object):
 
-    @classmethod
-    def from_crawler(cls, crawler):
-        cls.Mongo_Url = crawler.settings.get('MONGO_URL', )
-        cls.DB_Name = crawler.settings.get('DB_NAME')
+    def __init__(self):
+        self.MONGO_URL = settings.get("MONGO_URL")
+        self.MONGO_PORT = settings.get("MONGO_PORT")
+        self.DB_NAME = settings.get("DB_NAME")
 
-    def open_spider(self):
-        self.client = pymongo.MongoClient(self.Mongo_Url)
-        self.db = self.client[self.DB_Name]
+    def open_spider(self, spider):
+        self.client = pymongo.MongoClient(self.MONGO_URL, self.MONGO_PORT)
+        self.db = self.client[self.DB_NAME]
 
-    def close_spider(self):
+    def close_spider(self, spider):
         self.client.close()
 
     def process_item(self, item, spider):
         collection = self.db[spider.name]
-        item = dict(item) if isinstance(item, Item) else item
-        collection.insert(item)
+        dict_item = dict(item) if isinstance(item, Item) else item
+
+        print("准备插入")
+        collection.insert(dict_item)
         return item
