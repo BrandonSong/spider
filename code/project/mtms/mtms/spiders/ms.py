@@ -97,9 +97,11 @@ class MsSpider(scrapy.Spider):
             for store in store_infos:
                 ct_poi = store['ctPoi']
                 poi_id = store['poiid']
+                cateName = store['cateName']
                 yield scrapy.Request(
                     url="http://meishi.meituan.com/i/poi/{}?{}".format(poi_id, ct_poi),
-                    callback=self.parse_detail
+                    callback=self.parse_detail,
+                    meta= {"cateName": cateName}
                 )
         except:
             print(json_data)
@@ -107,7 +109,12 @@ class MsSpider(scrapy.Spider):
 
     def parse_detail(self, response):
 
+        ms = MtmsItem()
+
         print("开始提取数据")
+
+        cateName = response.meta.get('cateName', None)
+
         data = response.body.decode()
         ret = re.findall("window._appState = (.*);</script>", data)[0]
         json_data = json.loads(ret)
@@ -118,6 +125,16 @@ class MsSpider(scrapy.Spider):
         avgPrice = json_data['poiInfo']['avgPrice']
         shop_hours = json_data['poiInfo']['openInfo']
         score = json_data['poiInfo']['avgScore']
-        avgPrice = json_data['poiInfo']['MarkNumbers']
+        score_num = json_data['poiInfo']['MarkNumbers']
 
-        print(store_name, shop_hours)
+
+        ms['store_name']= store_name
+        ms['address']= address
+        ms['phone']= phone
+        ms['avgPrice']= avgPrice
+        ms['shop_hours']= shop_hours
+        ms['score']= score
+        ms['score_num']= score_num
+        ms['category'] = cateName
+
+        yield ms
