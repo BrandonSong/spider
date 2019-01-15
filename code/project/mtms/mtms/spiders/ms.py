@@ -76,5 +76,3 @@ class MsSpider(scrapy.Spider):
         data = response.body.decode()
 
         json_data = json.loads(data)
-
-
